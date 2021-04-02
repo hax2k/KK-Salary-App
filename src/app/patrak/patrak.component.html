@@ -1,0 +1,61 @@
+<br>
+<div class="container" style="max-width:1484px;">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+            <table class="table table-hover text-center search-table-outter">
+                <thead class="table-dark" style="width:100%">
+                    <tr>
+                        <th scope="col" style="width:20%;"></th>
+                        <th scope="col">નામ</th>
+                        <th scope="col">A</th>
+                        <th scope="col">B</th>
+                        <th scope="col">C</th>
+                        <th scope="col">D</th>
+                        <th scope="col">ટો.હિરા</th>
+                        <th scope="col">ટો.કામ</th>
+                        <th scope="col">ફિ.પગાર</th>
+                        <th scope="col">દિ</th>
+                        <th scope="col">ચુ.પગાર</th>
+                        <th scope="col">ઉપાડ</th>
+                        <th scope="col">પગાર</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of empData">
+                        <td><i class="fas fa-pen-square fa-lg" style="margin-right: 4px;" (click)="edit(item)"></i><i
+                                class="fas fa-trash fa-lg" style="margin-left: 4px;" (click)="deleteData(item)"></i>
+                        </td>
+                        <td>{{item.empdetails.name}} </td>
+                        <td> {{item.piece.total_A}} </td>
+                        <td> {{item.piece.total_B}} </td>
+                        <td> {{item.piece.total_C}} </td>
+                        <td> {{item.piece.total_D}} </td>
+                        <td> {{item.piece.total_All}} </td>
+                        <td> {{item.salary.salary_All}} </td>
+                        <td> {{item.total.totalsalary}} </td>
+                        <td> {{item.total.totalday}} </td>
+                        <td> {{item.total.earnsalary}} </td>
+                        <td> {{item.empdetails.upad}} </td>
+                        <td> {{item.total.grandTotal}} </td>
+
+                    </tr>
+                    <tr class="table-dark">
+                        <td>ટોટલ</td>
+                        <td></td>
+                        <td> {{total_A}} </td>
+                        <td> {{total_B}} </td>
+                        <td> {{total_C}} </td>
+                        <td> {{total_D}} </td>
+                        <td> {{total_All}} </td>
+                        <td> {{salary_All}} </td>
+                        <td> {{totalsalary}} </td>
+                        <td> {{totalday}} </td>
+                        <td> {{earnsalary}} </td>
+                        <td> {{upad}} </td>
+                        <td> {{grandTotal}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

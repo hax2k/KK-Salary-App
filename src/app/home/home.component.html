@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">નામ</span>
+                <input type="text" class="form-control" placeholder="કારીગર નામ" aria-label="Username"
+                    aria-describedby="addon-wrapping"  [(ngModel)]="empDetail.name">
+            </div>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">તારીખ</span>
+                <input type="date" class="form-control" placeholder="તારીખ" aria-label="Username"
+                    aria-describedby="addon-wrapping" [(ngModel)]="empDetail.date" >
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+
+            <table class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">તારીખ</th>
+                        <th scope="col">A</th>
+                        <th scope="col">B</th>
+                        <th scope="col">C</th>
+                        <th scope="col">D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor="let item of NewemployeeData">
+                        <th scope="row">{{NewemployeeData.indexOf(item)+1}}</th>
+                        <td><input type="number" class="form-control" placeholder="" (keyup)="sumOfAll()" [(ngModel)]="item.a" ></td>
+                        <td><input type="number" class="form-control" placeholder="" (keyup)="sumOfAll()" [(ngModel)]="item.b" ></td>
+                        <td><input type="number" class="form-control" placeholder="" (keyup)="sumOfAll()" [(ngModel)]="item.c" ></td>
+                        <td><input type="number" class="form-control" placeholder="" (keyup)="sumOfAll()" [(ngModel)]="item.d" ></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+          
+        </div>
+       
+        <div class="col-md-4">
+            <table class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">તારીખ</th>
+                        <th scope="col">ઉપાડ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="date" class="form-control" placeholder="" [(ngModel)]="empDetail.upadDate">  </td>
+                        <td><input type="number" class="form-control" placeholder="" (keyup)="upad()" [(ngModel)]="empDetail.upad"  ></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">દિવસો</th>
+                        <th scope="col">ફિક્સ પગાર</th>
+                    </tr>
+                    <tr>
+                        <th scope="col"><input type="number" class="form-control" placeholder="દિવસો" (keyup)="salaryCalculator();upad();"  [(ngModel)]="total.totalday" ></th>
+                        <th scope="col"><input type="number" class="form-control" placeholder="ફિક્સ પગાર" (keyup)="salaryCalculator();upad();"  [(ngModel)]="total.totalsalary" ></th>
+                    </tr>
+                </thead>
+            </table>
+            <table class="table table-hover text-center">
+                <thead class="table-dark" style="width: 100%;" >
+                    <tr>
+                        <th scope="col" style="width:35%;">નંગ</th>
+                        <th scope="col" style="width:35%;">કિંમત</th>
+                        <th scope="col" style="width:35%;">ટોટલ</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td> {{this.piece.total_A}} </td>
+                        <td><input type="number" class="form-control" style="text-align:center" placeholder="A" (keyup)="productOfA()" [(ngModel)]="price.price_A" ></td>
+                        <td>{{this.salary.salary_A}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{this.piece.total_B}}</td>
+                        <td><input type="number" class="form-control" style="text-align:center" placeholder="B" (keyup)="productOfB()"[(ngModel)]="price.price_B" ></td>
+                        <td>{{this.salary.salary_B}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{this.piece.total_C}}</td>
+                        <td><input type="number" class="form-control" style="text-align:center" placeholder="C" (keyup)="productOfC()"[(ngModel)]="price.price_C" ></td>
+                        <td>{{this.salary.salary_C}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{this.piece.total_D}}</td>
+                        <td><input type="number" class="form-control" style="text-align:center" placeholder="D" (keyup)="productOfD()" [(ngModel)]="price.price_D" ></td>
+                        <td>{{this.salary.salary_D}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>{{this.piece.total_All}}</b></td>
+                        <td><b>ટોટલ</b></td>
+                        <td><b>{{this.salary.salary_All}}</b></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>પગાર</td>
+                        <td>{{this.total.earnsalary}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>ઉપાડ</td>
+                        <td>{{this.empDetail.upad}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><b>ચુકતે પગાર</b></td>
+                        <td>{{this.total.grandTotal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <button type="button" class="btn btn-outline-success pb-0 mt-2" (click)="addData()"><i class="fas fa-plus-circle"></i></button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
