@@ -37,10 +37,10 @@ export class Piece{
   
 }
 export class Price{
-  price_A: number = 0;
-  price_B: number = 0;
-  price_C: number = 0;
-  price_D: number = 0;
+  price_A: number;
+  price_B: number;
+  price_C: number;
+  price_D: number;
 }
 export class Salary{
   salary_A: number = 0;

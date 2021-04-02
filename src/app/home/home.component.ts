@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       this.NewemployeeData.push(obj);
     }
     console.log(this.NewemployeeData);
-
+  
 
   }
   sumOfAll() {
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
       this.NewemployeeData.push(obj);
     }
     this.piece = new Piece();
-    this.price = new Price();
+    // this.price = new Price();
     this.salary = new Salary();
     this.empDetail = new EmpDetails();
     this.total = new Total();
