@@ -1,0 +1,58 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <table class="table table-hover text-center">
+        <thead class="table-dark" style="width: 100%;">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" style="width:35%;">નંગ</th>
+            <th scope="col" style="width:35%;">કિંમત</th>
+            <th scope="col" style="width:35%;">ટોટલ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> A </td>
+            <td> <input type="number" class="form-control" style="text-align:center" placeholder="A"
+                (keyup)="productOfA()" [(ngModel)]="this.piece.total_A"> </td>
+            <td><input type="number" class="form-control" style="text-align:center" placeholder="A"
+                (keyup)="productOfA();setPrice();" [(ngModel)]="price.price_A"></td>
+            <td>{{this.salary.salary_A}}</td>
+          </tr>
+          <tr>
+            <td> B </td>
+            <td> <input type="number" class="form-control" style="text-align:center" placeholder="B"
+                (keyup)="productOfB()" [(ngModel)]="this.piece.total_B"> </td>
+            <td><input type="number" class="form-control" style="text-align:center" placeholder="B"
+                (keyup)="productOfB();setPrice();" [(ngModel)]="price.price_B"></td>
+            <td>{{this.salary.salary_B}}</td>
+          </tr>
+          <tr>
+            <td> C </td>
+            <td> <input type="number" class="form-control" style="text-align:center" placeholder="C"
+                (keyup)="productOfC()" [(ngModel)]="this.piece.total_C"> </td>
+            <td><input type="number" class="form-control" style="text-align:center" placeholder="C"
+                (keyup)="productOfC();setPrice();" [(ngModel)]="price.price_C"></td>
+            <td>{{this.salary.salary_C}}</td>
+          </tr>
+          <tr>
+            <td> D </td>
+            <td> <input type="number" class="form-control" style="text-align:center" placeholder="D"
+                (keyup)="productOfD()" [(ngModel)]="this.piece.total_D"> </td>
+            <td><input type="number" class="form-control" style="text-align:center" placeholder="D"
+                (keyup)="productOfD();setPrice();" [(ngModel)]="price.price_D"></td>
+            <td>{{this.salary.salary_D}}</td>
+          </tr>
+          <tr>
+            <td><b>ટોટલ</b></td>
+            <td><b>{{this.piece.total_A + this.piece.total_B + this.piece.total_C + this.piece.total_D}}</b></td>
+            <td><b>ટોટલ</b></td>
+            <td><b>{{this.salary.salary_All}}</b></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+</div>

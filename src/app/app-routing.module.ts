@@ -3,17 +3,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UpdateComponent } from './update/update.component';
+import { ShortcalculatorComponent } from './shortcalculator/shortcalculator.component';
 
 const routes: Routes = [
   {
-    path: 'home', component:HomeComponent
+    path: 'home', component: ShortcalculatorComponent
   },
   {
-    path: 'patrak', component:PatrakComponent
+    path: 'patrak', component: PatrakComponent
   },
   {
-    path: 'update', component:UpdateComponent
+    path: 'update', component: UpdateComponent
+  },
+  {
+    path: 'calculator', component: HomeComponent,
   }
+
 
 ];
 

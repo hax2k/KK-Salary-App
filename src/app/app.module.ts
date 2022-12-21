@@ -9,13 +9,15 @@ import { PatrakComponent } from './patrak/patrak.component';
 import { UpdateComponent } from './update/update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ShortcalculatorComponent } from './shortcalculator/shortcalculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PatrakComponent,
-    UpdateComponent
+    UpdateComponent,
+    ShortcalculatorComponent
   ],
   imports: [
     BrowserModule,
