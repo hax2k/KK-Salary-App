@@ -21,20 +21,20 @@ export class ShortcalculatorComponent implements OnInit {
   }
 
   productOfA() {
-    this.salary.salary_A = this.piece.total_A * this.price.price_A;
-    this.salary.salary_All = this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D;
+    this.salary.salary_A = Math.round(this.piece.total_A * this.price.price_A);
+    this.salary.salary_All = Math.round(this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D);
   }
   productOfB() {
-    this.salary.salary_B = this.piece.total_B * this.price.price_B;
-    this.salary.salary_All = this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D;
+    this.salary.salary_B = Math.round(this.piece.total_B * this.price.price_B);
+    this.salary.salary_All = Math.round(this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D);
   }
   productOfC() {
-    this.salary.salary_C = this.piece.total_C * this.price.price_C;
-    this.salary.salary_All = this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D;
+    this.salary.salary_C = Math.round(this.piece.total_C * this.price.price_C);
+    this.salary.salary_All = Math.round(this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D);
   }
   productOfD() {
-    this.salary.salary_D = this.piece.total_D * this.price.price_D;
-    this.salary.salary_All = this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D;
+    this.salary.salary_D = Math.round(this.piece.total_D * this.price.price_D);
+    this.salary.salary_All = Math.round(this.salary.salary_A + this.salary.salary_B + this.salary.salary_C + this.salary.salary_D);
   }
 
   getPrice() {

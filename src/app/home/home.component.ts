@@ -29,7 +29,8 @@ export class HomeComponent implements OnInit {
       this.NewemployeeData.push(obj);
     }
     console.log(this.NewemployeeData);
-  
+    this.getPrice();
+
 
   }
   sumOfAll() {
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit {
     this.piece.total_All = this.piece.total_A + this.piece.total_B + this.piece.total_C + this.piece.total_D;
 
   }
-   salaryCalculator() {
+  salaryCalculator() {
     this.total.daysalary = this.total.totalsalary / 26;
     this.total.earnsalary = Math.round(this.total.daysalary * this.total.totalday);
   }
@@ -101,7 +102,27 @@ export class HomeComponent implements OnInit {
     this.total = new Total();
     this.toastr.success('User Added');
   }
-  
+
+  getPrice() {
+    if (JSON.parse(localStorage.getItem('prices') as any)) {
+      let price = JSON.parse(localStorage.getItem('prices') as any);
+      this.price.price_A = price.a;
+      this.price.price_B = price.b;
+      this.price.price_C = price.c;
+      this.price.price_D = price.d;
+    }
+  }
+
+  setPrice() {
+    let price = {
+      a: this.price.price_A,
+      b: this.price.price_B,
+      c: this.price.price_C,
+      d: this.price.price_D
+    };
+    localStorage.setItem('prices', JSON.stringify(price));
+  }
+
 }
 
 
